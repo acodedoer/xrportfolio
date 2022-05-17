@@ -1,4 +1,3 @@
-
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
@@ -57,7 +56,7 @@ const data = [
 const Grid = () => data.map((project,key)=>
     <Paper elevation={0} style={{width:"600px", minHeight:"350px", padding:"0.5em", margin:"1.5em",boxSizing:"border-box", display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"center"}} key={key}>
         <h3>{project.name}</h3>
-        {project.visual==1?<iframe style={{border:"none",width:"80%"}} src={project.link}/>:<video src={project.file}/>}
+        {project.visual===1?<iframe title={project.name} style={{border:"none",width:"80%"}} src={project.link}/>:<video src={project.file}/>}
         <p>{project.description}</p>
         <Button onClick={()=> window.open(project.link)} variant="contained">Full View</Button>
     </Paper>)
